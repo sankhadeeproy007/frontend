@@ -7,7 +7,7 @@ Orders.propTypes = {
 };
 
 Orders.defaultProps = {
-  orders: 2,
+  orders: 3,
 };
 
 export default Orders;
