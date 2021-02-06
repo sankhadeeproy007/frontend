@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 
-const Home = ({ name }) => <div>Hello {name} from home</div>;
+import Page from '../components/Page';
+
+const Home = ({ name }) => <Page> Hello {name} from home</Page>;
 
 Home.propTypes = {
   name: PropTypes.string,
