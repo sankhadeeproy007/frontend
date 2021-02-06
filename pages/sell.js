@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const Sell = ({ price }) => <div>Sell page here {price}</div>;
+const Sell = ({ price }) => <div> Sell page here {price}</div>;
 
 Sell.propTypes = {
   price: PropTypes.number,
