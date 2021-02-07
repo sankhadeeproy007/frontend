@@ -16,5 +16,5 @@
     "statusBarItem.hoverBackground": "#3d369c"
   },
   "peacock.color": "#2e2976",
-  "prettier.trailingComma": "all"
+  "prettier.trailingComma": "es5"
 }
