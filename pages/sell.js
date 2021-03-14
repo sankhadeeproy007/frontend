@@ -1,13 +1,9 @@
-import PropTypes from 'prop-types';
+import CreateProduct from '../components/CreateProduct';
 
-const Sell = ({ price }) => <div> Sell page here {price}</div>;
-
-Sell.propTypes = {
-  price: PropTypes.number,
-};
-
-Sell.defaultProps = {
-  price: 20,
-};
+const Sell = () => (
+  <div>
+    <CreateProduct />
+  </div>
+);
 
 export default Sell;
