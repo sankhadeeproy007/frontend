@@ -1,4 +1,5 @@
 import { useMutation, gql } from '@apollo/client';
+import Router from 'next/router';
 
 import useForm from '../lib/useForm';
 
@@ -32,13 +33,13 @@ const CREATE_PRODUCT_MUTATION = gql`
 `;
 
 const CreateProduct = () => {
-  const { inputs, handleChange, clearForm, resetForm } = useForm({
+  const { inputs, handleChange, clearForm } = useForm({
     name: 'Nice Shoes',
     price: 34234,
     description: 'These are the best shoes!',
   });
 
-  const [createProduct, { loading, error, data }] = useMutation(
+  const [createProduct, { loading, error }] = useMutation(
     CREATE_PRODUCT_MUTATION,
     {
       variables: inputs,
@@ -50,10 +51,9 @@ const CreateProduct = () => {
     <Form
       onSubmit={async (e) => {
         e.preventDefault();
-        console.log(inputs);
-        // Submit the inputfields to the backend:
-        await createProduct();
+        const res = await createProduct();
         clearForm();
+        Router.push(`/product/${res.data.createProduct.id}`);
       }}
     >
       <DisplayError error={error} />
